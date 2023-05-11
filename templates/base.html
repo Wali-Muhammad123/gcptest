@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" style="text-align: center;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Digigold</title>
+    {% load bootstrap5 %} 
+    {% bootstrap_css %} 
+    {% load static %} 
+    {% bootstrap_javascript %}
+    {% bootstrap_messages %} 
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Features-Image-images.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Growing-Search-Bar-Animated-Text-Input.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar-Right-Links-Dark-icons.css' %}">
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %} 
+</body>
+</html>

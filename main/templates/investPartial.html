@@ -1,0 +1,72 @@
+{% load static %}
+<form method="get" id="investt">
+    {% csrf_token %}
+    <label class="form-label" style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 18px;margin-left: -106px;margin-top: 9px;text-align: left;">Select from our quick investment options</label>
+    <div style="display: flex;margin-top: 8px;">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" id="formCheck-4" name="invest" value="25"><label class="form-check-label" for="formCheck-4" style="font-size: 15px;font-family: 'Open Sans', sans-serif;color: var(--bs-white);">£25.00&nbsp;
+            </label>
+        </div>
+        <div class="form-check" style="margin-left: 37px;"><input class="form-check-input" type="radio" id="formCheck-1" name="invest" value="50"><label class="form-check-label" for="formCheck-1" style="margin-top: -23px;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);"><br>£50.00
+        </label>
+    </div>
+        <div class="form-check" style="margin-left: 37px;">
+            <input class="form-check-input" type="radio" id="formCheck-2" name="invest" value="100"><label class="form-check-label" for="formCheck-2" style="margin-top: -23px;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);"><br>£100.00<br><br>
+            </label>
+        </div>
+        <div class="form-check" style="margin-left: 67px;"><input class="form-check-input" type="radio" id="formCheck-3" name="invest" value="1000"><label class="form-check-label" for="formCheck-3" style="margin-top: -22px;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);"><br>£1000.00<br><br>
+        </label>
+    </div>
+    </div>
+    <p style="text-align: center;font-size: 18px;font-family: 'Open Sans', sans-serif;color: var(--bs-white);">or</p>
+    <input class="form-control" type="text" id="investbox" placeholder="enter your own amount" style="background: transparent;height: 52px;width: 569px;">
+    <h1 style="font-size: 24px;color: #f4b329;text-align: left;font-family: 'EB Garamond', serif;margin-top: 25px;">Click to invest</h1>
+    <p style="color: var(--bs-white);font-size: 18px;font-family: 'Open Sans', sans-serif;text-align: left;">Invest in digital gold with just a click of a button. Your investment is secured by a portion of real physical gold, stored safely within the Vault&nbsp;</p>
+    <button class="btn btn-primary text-start" type="submit" style="background: #f4b329;border-style: none;border-radius: 0px;color: var(--bs-black);transform: translate(-176px);">Invest now</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    $(document).ready(function(){
+        const radios = document.querySelectorAll('input[type="radio"]');
+        const textInput = document.querySelector('#investbox');
+
+// Disable text input when any radio button is checked
+        for (let radio of radios) {
+         radio.addEventListener('change', () => {
+        if (radio.checked) {
+            textInput.disabled = true;
+        } else {
+         textInput.disabled = false;
+         }
+    });
+}
+
+// Uncheck all radio buttons when text input is added
+textInput.addEventListener('input', () => {
+  for (let radio of radios) {
+    radio.checked = false;
+  }
+});
+$('#investt').submit(function(e){
+    e.preventDefault();
+    if (textInput.disabled==true){
+        var invest = $('input[name="invest"]:checked').val();
+    }
+    else{
+        var invest = $('#investbox').val();
+    }
+    $.ajax({
+        type:'GET',
+        url:'/invest/',
+        data:{
+            invest:invest,
+            csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        },
+        success:function(){
+            window.location.href = "{% url 'invest' %}";
+        }
+    });
+});
+});
+</script> 

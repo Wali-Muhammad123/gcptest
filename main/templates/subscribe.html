@@ -1,0 +1,36 @@
+{% load static %}
+{% load bootstrap5 %}
+<form style="margin-left: -142px;width: 480px;" method="post" id="subscribe">
+    {% csrf_token %}
+    <label id="subscribeLabel" class="form-label" style="font-family: 'EB Garamond', serif;font-size: 24px;color: var(--bs-yellow);margin-top: 45px;margin-left: 0px;">Subscribe Us</label>
+    <input class="form-control" type="text" id="fullname" style="width: 287px;margin-left: 176px;background: transparent;margin-top: 6px;" placeholder="Full Name">
+    <input class="form-control" type="email" id="email" style="width: 290px;margin-left: 175px;background: transparent;margin-top: 23px;" placeholder="Email">
+    <button id="subscribed" class="btn btn-primary" type="submit" style="width: 278px;margin-left: 155px;margin-top: 40px;background: #f4b329;border-style: none;border-radius: 0px;font-family: 'Open Sans', sans-serif;color: #252525;height: 46px; ">Subscribe Now</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#subscribe").submit(function(e){
+            e.preventDefault();
+            var name = $("#subscribe input[type=text]").val();
+            var email = $("#subscribe input[type=email]").val();
+            $.ajax({
+                url: "{% url 'subscribe' %}",
+                type: "POST",
+                data: {
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    name: name,
+                    email: email
+                },
+                success: function(data){
+                    $('input#fullname').remove();
+                    $('input#email').remove();
+                    $('button#subscribed').remove();
+                    $('#subscribeLabel').after('<div style="display: flex;" id="nn"></div>');
+                    $('#nn').append('<i class="far fa-check-circle" style="color: #f4b329;font-size: 30px;margin: 0px;margin-left: 175px;margin-top: 20px;"></i>');
+                    $('#nn').append('<p style="color: var(--bs-white);text-align: left;margin-top: 13px;margin-left: 14px;font-family: \'Open Sans\', sans-serif;">You have successfully subscribed to our newsletter</p>');
+                }
+            });
+        });
+    });
+</script>

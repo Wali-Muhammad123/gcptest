@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% load bootstrap5 %}
+{% block content %}
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark py-3">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span style="font-family: 'EB Garamond', serif;color: #f4b329;font-size: 50px;">DigiGold</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-5">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Gold Market</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Buy Gold</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Buy Silver</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About&nbsp;</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="border-right-style: solid;border-right-color: rgba(255, 255, 255, 0.55);"><img src="{% static 'img/Vectorsearch.svg' %}"></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><img src="{% static 'img/Vectorcart.svg' %}"></a></li>
+                </ul><a class="btn btn-primary ms-md-2" role="button" href="#" style="background: #252525;border-style: none;"><i class="fas fa-bars"></i></a>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div data-bss-parallax-bg="true" style="height: 600px;background-image: url(https://cdn.bootstrapstudio.io/placeholders/1400x800.png);background-position: center;background-size: cover;">
+            <div class="container h-100" style="filter: brightness(102%) contrast(107%);background: url(&quot;static/img/200324081942-gold-bars-stock%201bg.png&quot;);">
+                <div class="row h-100" style="width: 1049px;margin-left: 12px;">
+                    <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center" style="border-right-style: none;">
+                        <div style="max-width: 350px;">
+                            <h1 class="fw-bold" style="color: #f4b329;filter: brightness(100%);">Invest in Gold with Digital Gold&nbsp;</h1>
+                            <p class="my-3" style="color: rgb(255,255,255);">Digital Gold is the best place to purchase gold bars and coins at market leading rates of 97% of the global spot price. We also pay highly competitive rates for scrap gold.</p><a class="btn btn-outline-primary btn-lg" role="button" href="{% url 'buygold' %}" style="background: #f4b329;color: var(--bs-black);border-style: none;border-top-style: none;border-right-style: none;border-bottom-style: none;border-left-style: none;border-radius: 0px;">Buy Gold Now</a>
+                        </div>
+                    </div>
+                    <div class="col" style="margin-top: 53px;">
+                        <div class="row" style="border-bottom: 0.1px solid var(--bs-gray-100);">
+                            <div class="col" style="margin-bottom: 15px;border-right: 0.1px solid var(--bs-gray-100);">
+                                <div style="display: flex;"><span class="fw-bolder" style="color: #f4b329;font-family: 'EB Garamond', serif;font-size: 28px;margin-top: 39px;">Gold Coins</span><img src="{% static 'img/2023-goldcoins.svg' %}" style="margin-left: 17px;"></div>
+                                <hr style="color: rgb(255,255,255);">
+                                <div><span style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;">2023 UK King Charles III Britannia 1oz Gold Coin</span></div>
+                                <hr style="border-right-color: rgb(254,255,255);color: var(--bs-white);">
+                                <div><span style="color: rgb(255,255,255);font-family: 'Open Sans', sans-serif;font-size: 15px;">Gold Sovereign Coins</span></div>
+                            </div>
+                            <div class="col">
+                                <div style="display: flex;"><span class="fw-bolder" style="color: #f4b329;font-size: 28px;font-family: 'EB Garamond', serif;margin-top: 39px;">Silver Coins</span><img src="{% static 'img/silvercoins.png' %}" style="margin-left: 14px;"></div>
+                                <hr style="color: rgb(255,255,255);">
+                                <div><span style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;">2023 King Charles III Britannia 1oz Silver Coin</span></div>
+                                <hr style="color: var(--bs-white);">
+                                <div><span style="color: rgb(255,255,255);font-family: 'Open Sans', sans-serif;font-size: 15px;">1oz Silver Coins</span></div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 8px;">
+                            <div class="col" style="border-right: 0.1px solid var(--bs-white);">
+                                <div style="display: flex;"><span class="fw-bolder" style="color: #f4b329;font-size: 28px;font-family: 'EB Garamond', serif;margin-top: 39px;">Gold Bars</span><img src="{% static 'img/goldbar.svg' %}" style="margin-left: 17px;"></div>
+                                <hr style="color: rgb(255,255,255);">
+                                <div><span style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;">100g Gold Bars&nbsp;</span></div>
+                                <hr style="color: var(--bs-white);">
+                                <div><span style="color: rgb(255,255,255);font-family: 'Open Sans', sans-serif;font-size: 15px;">Gold Sovereign Coins</span></div>
+                            </div>
+                            <div class="col">
+                                <div style="display: flex;"><span class="fw-bolder" style="color: #f4b329;font-size: 28px;font-family: 'EB Garamond', serif;margin-top: 39px;">Silver Bars</span><img src="{% static 'img/silverbar.svg' %}" style="margin-left: 17px;"></div>
+                                <hr style="color: rgb(255,255,255);">
+                                <div><span style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;">1kg Silver Bars</span></div>
+                                <hr style="color: var(--bs-white);">
+                                <div><span style="color: rgb(255,255,255);font-family: 'Open Sans', sans-serif;font-size: 15px;">1 oz Silver Coins</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #252525;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="margin-top: 76px;margin-left: -38px;">
+                    <div>
+                        <h1 style="font-size: 36px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;">Our Features</h1>
+                        <div>
+                            <div style="display: flex;"><img src="{% static 'img/Vectormarket.svg' %}">
+                                <h1 style="color: #f4b329;font-family: 'EB Garamond', serif;font-size: 24px;margin-left: 13px;">Market Leading Rates&nbsp;</h1>
+                            </div>
+                            <p style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;text-align: left;font-size: 15px;">Digital Gold offers market leading rates for gold bars and coins. Get the best value for your investment when you purchase digital gold with us.</p>
+                        </div>
+                        <div>
+                            <div style="display: flex;"><img src="{% static 'img/Vectorpayment.svg' %}">
+                                <h1 style="color: #f4b329;font-family: 'EB Garamond', serif;font-size: 24px;margin-left: 13px;">Quick Payment&nbsp;</h1>
+                            </div>
+                            <p style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;text-align: left;font-size: 15px;">We understand your time is valuable, so we make sure to pay you the same day you post your gold. Contact us today to get our latest prices</p>
+                        </div>
+                        <div>
+                            <div style="display: flex;"><img src="{% static 'img/Vectortransaction.svg' %}">
+                                <h1 style="color: #f4b329;font-family: 'EB Garamond', serif;font-size: 24px;margin-left: 13px;">Secure Transactions</h1>
+                            </div>
+                            <p style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;text-align: left;font-size: 15px;">We understand your time is valuable, so we make sure to pay you the same day you post your gold. Contact us today to get our latest prices</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" style="margin-left: -5px;">
+                    <div><img src="{% static 'img/image%201.svg' %}" style="width: 627px;height: 441px;margin-left: 524px;margin-top: -367px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #252525;height: 779.688px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <h1 class="fw-semibold" style="color: #f4b329;font-family: 'EB Garamond', serif;text-align: center;font-size: 36px;margin-top: 51px;">Invest in digital gold</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center;color: var(--bs-white);font-size: 15px;">Buy and sell digital gold with ease, all at the click of a button. Each purchase is backed by a portion of real physical<br>&nbsp;gold securely stored within the Vault.&nbsp;To learn more about DigiGold or to start investing today, follow<br>the simple steps below.&nbsp;</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div><img src="{% static 'img/8g-queen-f-470x470-1%201.svg' %}"></div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h1 style="font-size: 24px;color: #f4b329;text-align: left;font-family: 'EB Garamond', serif;">Choose Your Investment Amount</h1>
+                    </div>
+                    <div>
+                        {% include 'investPartial.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p style="text-align: center;font-size: 18px;font-family: 'Open Sans', sans-serif;color: #f4b329;">Please note that your investment amount may be rounded when calculating your investment options. <br>Start investing in digital gold today and experience the ease and convenience of digital gold.</p>
+        </div>
+    </section>
+    <section style="background: #f4b329;">
+        <div class="container" style="background: #f4b329;">
+            <div class="row" style="background: #f4b329;">
+                <div class="col-md-6 col-lg-6" style="background: #f4b329;">
+                    <div style="background: #f4b329;padding: 51px;">
+                        <h1 style="font-size: 36px;font-family: 'EB Garamond', serif;text-align: left;color: #252525;">Subscription Simplified.</h1>
+                        <p style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: #252525;">Invest in digital gold hassle-free with our subscription package. Benefits include:</p>
+                        <ul>
+                            <li style="text-align: left;">Automatic Monthly Purchase of Digital Gold</li>
+                            <li style="text-align: left;">Exclusive deals and discounts</li>
+                            <li style="text-align: left;">Options to sell at any time</li>
+                            <li style="text-align: left;">No hidden fees</li>
+                            <li style="text-align: left;">Easy Cancellation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div><img src="{% static 'img/Rectangle%20127.png' %}" style="margin-left: 73px;width: 724px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #252525;height: 599.688px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="margin-top: 0px;">
+                        <h1 style="color: #f4b329;text-align: center;font-family: 'EB Garamond', serif;font-size: 36px;margin-top: 65px;margin-bottom: 30px;height: 40.1875px;">How it works</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="display: flex;">
+                        <div><img src="{% static 'img/Frame%2021.png' %}">
+                            <p style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: center;">To start your investment, please register<br>or login and complete the process</p>
+                        </div><img src="{% static 'img/istockphoto-1135222849-612x612%201arro1.svg' %}" width="119" height="278">
+                        <div style="margin-left: 105px;"><img src="{% static 'img/Frame%2012.svg' %}" style="margin-left: -89px;">
+                            <p style="color: var(--bs-white);font-size: 15px;font-family: 'Open Sans', sans-serif;margin-left: -35px;text-align: center;">Enter the amount you wish to&nbsp;<br>invest or the grammes of gold<br>you would like to purchase</p>
+                        </div><img src="{% static 'img/istockphoto-1135222849-612x612%202arrow2.svg' %}" width="119" height="48" style="margin-top: 51px;width: 119px;height: 278px;">
+                        <div style="margin-left: 11px;"><img width="245" height="265" src="{% static 'img/Frame%2033.svg' %}">
+                            <p style="color: var(--bs-white);font-size: 15px;font-family: 'Open Sans', sans-serif;">Choose from the available payment options<br>to complete your gold purchase transaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #252525;margin-top: -32px;height: 466.188px;">
+        <h1 style="color: #f4b329;font-size: 36px;font-family: 'EB Garamond', serif;text-align: center;margin-top: 31px;margin-left: 200px;">You can Buy from here&nbsp;</h1>
+        <div class="container" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="display: flex;margin-left: 105px;">
+                        <div>
+                            <div class="card" style="background: #323232;width: 325px;height: 327px;">
+                                <div class="card-body" style="height: 400px;">
+                                    <div style="display: grid;transform: translate(147px);margin-left: 99px;margin-top: -10px;"><img src="{% static 'img/Frame%201heart.svg' %}"><img src="{% static 'img/Frame%202twoarrows.svg' %}"></div>
+                                    <div style="margin-left: 21px;margin-top: -33px;"><img src="{% static 'img/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3drNzAwMDMyMjYtaW1hZ2UtMDEtam9iNzA2XzEucG5n%201.svg' %}" style="margin-top: -72px;"></div>
+                                    <h1 style="font-size: 30px;font-family: 'EB Garamond', serif;color: #f4b329;">Gold Bars</h1><span style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 20px;">£0.00</span>
+                                    <div style="display: flex;background: #f4b329;height: 47px;width: 321px;margin-left: -15px;margin-top: 18px;border-radius: 3px;">
+                                        <p style="font-size: 18px;color: #252525;width: 114px;font-family: 'Open Sans', sans-serif;margin-left: 12px;margin-top: 11px;">Add to Cart</p><img src="{% static 'img/Vectorcart1.png' %}" width="35" height="30" style="margin-left: 155px;margin-top: 8px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-left: 34px;">
+                            <div class="card" style="background: #323232;width: 325px;height: 327px;">
+                                <div class="card-body" style="width: 294px;">
+                                    <div><img src="{% static 'img/goldbar%201.svg' %}" style="height: 223px;margin-top: 13px;margin-left: 7px;"></div>
+                                    <h1 style="font-size: 30px;font-family: 'EB Garamond', serif;color: #f4b329;height: 30px;margin-top: -3px;">Gold Bars</h1><span style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 20px;">£0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-left: 34px;">
+                            <div class="card" style="background: #323232;width: 325px;height: 327px;">
+                                <div class="card-body" style="height: 408px;">
+                                    <div><img src="{% static 'img/silvercoins%201.svg' %}" style="margin-top: 38px;margin-left: 36px;"></div>
+                                    <h1 style="font-size: 30px;font-family: 'EB Garamond', serif;color: #f4b329;height: 30px;margin-top: 15px;margin-left: 10px;">Gold Bars</h1><span style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 20px;margin-left: 10px;">£0.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #323232;height: 394.797px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div><img src="{% static 'img/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3drNzAwMDMyMjYtaW1hZ2UtMDEtam9iNzA2XzEucG5n%202goldee.svg' %}" style="margin-left: 36px;margin-top: 55px;"></div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <h1 style="font-family: 'EB Garamond', serif;color: #f4b329;margin-top: 55px;text-align: left;">Get Gold for All at The Best Prices</h1>
+                        <p style="color: var(--bs-white);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: left;">Digital Gold For All offers the best prices for Digi Gold. Buy instantly with a one-click process from £ 1 onwards. Shop now and get the gold you need for all occasions!</p>
+                        <h1 style="font-size: 24px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;">Invest in Gold, Store in Confidence</h1>
+                        <p style="color: var(--bs-white);font-size: 15px;font-family: 'Open Sans', sans-serif;text-align: left;">With Sequel Vaults, you can rest assured knowing that your hard-earned Digi Gold is securely stored and monitored by an independent trustee. Protect your gold with Sequel Vaults and never worry about its safety again!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #252525;height: 648.781px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <h1 style="font-size: 36px;font-family: 'EB Garamond', serif;color: #f4b329;height: 48.1875px;margin-top: 72px;">Invest in the Future, <br>Buy Digital Gold Today!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 53px;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="background: #323232;">
+                        <div class="card-body">
+                            <div style="display: flex;">
+                                <div><img src="{% static 'img/8g-king%201.svg' %}"></div>
+                                <div style="margin-left: 10px;display: block;">
+                                    <div>
+                                        <h1 style="font-size: 24px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;margin-left: 19px;">Invest in Gold, Go Digital</h1>
+                                    </div>
+                                    <div>
+                                        <p style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: left;margin-left: 20px;">Buy 24K 999 Pure Digital Gold at the best prices in the market.</p>
+                                    </div>
+                                    <div><button class="btn btn-primary" type="button" style="background: #f4b329;color: #252525;width: 146.5px;height: 45px;border-style: none;border-radius: 0px;font-family: 'Open Sans', sans-serif;font-size: 15px;margin-left: -92px;">Invest Now</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="background: #323232;width: 589px;">
+                        <div class="card-body">
+                            <div style="display: flex;">
+                                <div><img src="{% static 'img/8g-king%201.svg' %}"></div>
+                                <div style="margin-left: 10px;display: block;">
+                                    <div>
+                                        <h1 style="font-size: 24px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;margin-left: 19px;">Invest a POUND , Win a Fortune</h1>
+                                    </div>
+                                    <div>
+                                        <p style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: left;margin-left: 20px;">Buy as little as £1 worth of digital gold.</p>
+                                    </div>
+                                    <div><button class="btn btn-primary" type="button" style="background: #f4b329;color: #252525;width: 146.5px;height: 45px;border-style: none;border-radius: 0px;font-family: 'Open Sans', sans-serif;font-size: 15px;margin-left: -92px;">Invest Now</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="background: #323232;margin-top: 13px;height: 175px;">
+                        <div class="card-body">
+                            <div style="display: flex;">
+                                <div><img src="{% static 'img/2023-goldcoins%201.png' %}" style="margin-left: 7px;margin-top: 15px;"></div>
+                                <div style="margin-left: 10px;display: block;">
+                                    <div>
+                                        <h1 style="font-size: 24px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;margin-left: 19px;">Pure Gold, Purely You</h1>
+                                    </div>
+                                    <div>
+                                        <p style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: left;margin-left: 20px;">Get 100% hallmarked and certified purity of gold.</p>
+                                    </div>
+                                    <div><button class="btn btn-primary" type="button" style="background: #f4b329;color: #252525;width: 146.5px;height: 45px;border-style: none;border-radius: 0px;font-family: 'Open Sans', sans-serif;font-size: 15px;margin-left: -92px;">Invest Now</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="background: #323232;width: 589px;margin-top: 13px;">
+                        <div class="card-body">
+                            <div style="display: flex;">
+                                <div><img src="{% static 'img/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3drNzAwMDMyMjYtaW1hZ2UtMDEtam9iNzA2XzEucG5n%203jj.svg' %}" style="margin-left: 7px;margin-top: 15px;"></div>
+                                <div style="margin-left: 10px;display: block;">
+                                    <div>
+                                        <h1 style="font-size: 24px;color: #f4b329;font-family: 'EB Garamond', serif;text-align: left;margin-left: 19px;">Your gold is protected and vaulted.</h1>
+                                    </div>
+                                    <div>
+                                        <p style="color: var(--bs-card-bg);font-family: 'Open Sans', sans-serif;font-size: 15px;text-align: left;margin-left: 20px;">Store your digital gold safely and securely in Sequel Vaults, which are monitored by an independent trustee.</p>
+                                    </div>
+                                    <div><button class="btn btn-primary" type="button" style="background: #f4b329;color: #252525;width: 146.5px;height: 45px;border-style: none;border-radius: 0px;font-family: 'Open Sans', sans-serif;font-size: 15px;margin-left: -92px;">Invest Now</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #f4b329;margin-top: -2px;">
+        <div class="container" style="background: #f4b329;">
+            <div class="row" style="background: #f4b329;">
+                <div class="col-md-12" style="height: 184.297px;">
+                    <div>
+                        <h1 style="margin-top: 31px;text-align: left;font-size: 24px;font-family: 'EB Garamond', serif;color: #252525;margin-left: 46px;margin-right: 6px;">Why choose digital gold?</h1>
+                        <p style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;margin-left: 46px;margin-top: 12px;">Choose digital gold for a reliable and convenient digital gold investment experience.</p>
+                        <div style="display: flex;">
+                            <div style="display: flex;"><img src="{% static 'img/Vectorfooter.png' %}" style="margin-left: 46px;"><span style="font-family: 'Open Sans', sans-serif;font-size: 15;color: #252525;margin-left: 14px;">Trusted and Accredited</span></div>
+                            <div style="display: flex;"><img src="{% static 'img/Vectorfooter.png' %}" style="margin-left: 14px;"><span style="font-family: 'Open Sans', sans-serif;font-size: 15px;color: #252525;margin-left: 14px;">Transparent Valuations</span></div>
+                            <div style="display: flex;"><img src="{% static 'img/Vectorfooter.png' %}" style="margin-left: 14px;"><span style="font-family: 'Open Sans', sans-serif;font-size: 15px;color: #252525;margin-left: 14px;">Hassle free returns</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background: #323232;">
+        <div class="container">
+            <div class="row" style="margin-top: -1px;">
+                <div class="col-md-3" style="margin-left: 54px;">
+                    <div style="margin-left: -129px;">
+                        <p style="color: var(--bs-yellow);font-size: 24px;font-family: 'EB Garamond', serif;margin-top: 45px;margin-left: -128px;">Support</p>
+                        <div style="display: grid;margin-left: 74px;"><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);">Press</a><a class="border-0" href="#" style="text-align: left;font-size: 15px;font-family: 'Open Sans', sans-serif;color: var(--bs-white);margin-top: 6px;">Contact Us</a><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Meet &amp; Greet</a><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Privacy Policy</a><a class="border-0" href="#" style="text-align: left;width: 166px;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Terms and Conditions</a><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Careers</a></div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-left: -117px;">
+                    <div>
+                        <p style="color: var(--bs-yellow);font-size: 24px;font-family: 'EB Garamond', serif;margin-top: 45px;text-align: left;margin-left: 67px;">Help &amp; Advice</p>
+                        <div style="display: grid;margin-left: 74px;"><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);">About Us</a><a class="border-0" href="#" style="text-align: left;font-size: 15px;font-family: 'Open Sans', sans-serif;color: var(--bs-white);margin-top: 6px;">FAQs</a><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Glossary</a><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);margin-top: 6px;">Buying Guide</a></div>
+                    </div>
+                </div>
+                <div class="col-md-3" style="margin-left: -30px;">
+                    <div>
+                        <p style="color: var(--bs-yellow);font-size: 24px;font-family: 'EB Garamond', serif;margin-top: 45px;text-align: left;margin-left: 67px;">Account</p>
+                    </div>
+                    <div style="display: grid;margin-left: 74px;"><a class="border-0" href="#" style="text-align: left;font-family: 'Open Sans', sans-serif;font-size: 15px;color: var(--bs-white);">Login</a><a class="border-0" href="#" style="text-align: left;font-size: 15px;font-family: 'Open Sans', sans-serif;color: var(--bs-white);margin-top: 6px;">Signup</a></div>
+                    <div>
+                        <p style="color: var(--bs-yellow);font-size: 24px;font-family: 'EB Garamond', serif;margin-top: 45px;text-align: left;margin-left: 67px;">Follow us</p>
+                    </div>
+                    <div style="display: flex;margin-left: 62px;margin-top: -7px;"><img src="{% static 'img/facebook.svg' %}"><img src="{% static 'img/linkedin%20(1).svg' %}" style="margin-left: 6px;"><img src="{% static 'img/instagram%20(1).svg' %}" style="margin-left: 6px;"><img src="{% static 'img/twitter%20(1).svg' %}" style="margin-left: 6px;"></div>
+                </div>
+                <div class="col" style="width: 711px;margin-left: -31px;">
+                    <div>
+                        {% include 'subscribe.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr style="color: var(--bs-white);">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <p style="color: var(--bs-white);text-align: left;font-family: 'Open Sans', sans-serif;margin-left: 127px;">Copyright © DigitalGold 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bs-init.js' %}"></script>
+    <script src="{% static 'js/functionals.js' %}"></script>
+{% endblock %}
