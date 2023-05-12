@@ -1,5 +1,4 @@
 FROM python:3.9-alpine
-RUN chmod 777 /digigold
 WORKDIR /digigold
 COPY requirements.txt .
 RUN pip install -r requirements.txt
