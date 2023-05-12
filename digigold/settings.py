@@ -122,9 +122,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    BASEDIR / "static",
+    BASE_DIR / "static",
 ]
-STATIC_ROOT='/var/www/static'
+STATIC_ROOT='/gcptest/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
